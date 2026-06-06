@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Damdoomteee 💘</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Tahoma,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff4d88,#ff8ac6,#ffc2de);
+    overflow:hidden;
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    color:white;
+    font-size:42px;
+    margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,255,255,.8);
+}
+
+button{
+    border:none;
+    padding:16px 35px;
+    border-radius:50px;
+    font-size:22px;
+    cursor:pointer;
+    background:white;
+    color:#ff2d75;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.message{
+    display:none;
+    margin-top:25px;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    max-width:700px;
+    text-shadow:0 0 15px rgba(255,255,255,.8);
+    animation:show .8s ease;
+}
+
+#secondBtn{
+    display:none;
+    margin-top:25px;
+}
+
+#finalMsg{
+    display:none;
+    margin-top:25px;
+    color:white;
+    font-size:38px;
+    font-weight:bold;
+    animation:show .8s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:absolute;
+    font-size:30px;
+    pointer-events:none;
+    animation:float 6s linear forwards;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Damdoomteee 💘</h1>
+
+<button onclick="showMessage()">
+إرضي يا زعلانة 🥺❤️
+</button>
+
+<div class="message" id="msg">
+مش قصدي ازعلك وخلص عديها يا دولة😘
+</div>
+
+<button id="secondBtn" onclick="forgive()">
+رضيتي؟ 🥺
+</button>
+
+<div id="finalMsg">
+هيني راضيتك خاوة ولك 😘❤️
+</div>
+
+<script>
+
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+
+    const hearts=["❤️","💖","💕","💘","💞","💓"];
+    heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*40)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,250);
+
+function showMessage(){
+    document.getElementById("msg").style.display="block";
+
+    setTimeout(()=>{
+        document.getElementById("secondBtn").style.display="block";
+    },2000);
+}
+
+function forgive(){
+    document.getElementById("finalMsg").style.display="block";
+}
+</script>
+
+</body>
+</html>
